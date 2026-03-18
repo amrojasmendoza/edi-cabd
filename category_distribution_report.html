@@ -1,0 +1,4837 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Distribuciones por sexo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f9fafb;
+            color: #1f2933;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+        img {
+            display: block;
+            margin: 1rem auto;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #d2d6dc;
+            border-radius: 4px;
+        }
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table.data-table thead tr {
+            background-color: #e4ecf7;
+        }
+        table.data-table th,
+        table.data-table td {
+            border: 1px solid #d2d6dc;
+            padding: 0.5rem 0.75rem;
+            text-align: center;
+        }
+        table.mapping-table {
+            border-collapse: collapse;
+            margin: 0 auto 2rem auto;
+            width: 60%;
+        }
+        table.mapping-table th,
+        table.mapping-table td {
+            border: 1px solid #d2d6dc;
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+        }
+        table.mapping-table thead {
+            background-color: #e4ecf7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Distribución de categorías por sexo</h1>
+    <section>
+        <h2>Equivalencia de nombres de columnas</h2>
+        <table class="mapping-table">
+            <thead>
+                <tr>
+                    <th>Nombre original</th>
+                    <th>Nombre en el informe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>sol.cat</td><td>Category #1</td></tr>
+<tr><td>Ana.cat</td><td>Category #2</td></tr>
+<tr><td>Csic.anual</td><td>Category class CSIC</td></tr>
+<tr><td>TEMPORAL</td><td>Temporal status</td></tr>
+            </tbody>
+    </table>
+</section>
+    <section>
+        <h2>Equivalencias basadas en Category class 2 (Ana)</h2>
+        <p>Para cada categoría de Ana se listan todas las combinaciones observadas con las clases de Sol y CSIC, junto con el número de personas asignadas a cada combinación.</p>
+        <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category #2</th>
+      <th>Category #1</th>
+      <th>Category class CSIC</th>
+      <th>Personas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visitantes/Otros</td>
+      <td>Predoc</td>
+      <td>VISITANTE</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Visitantes/Otros</td>
+      <td>Técnico</td>
+      <td>VISITANTE</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Visitantes/Otros</td>
+      <td>n.a.</td>
+      <td>MARGARITA SALAS</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Visitantes/Otros</td>
+      <td>n.a.</td>
+      <td>No especificado</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Visitantes/Otros</td>
+      <td>n.a.</td>
+      <td>VISITANTE</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>Técnico</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>Técnico</td>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>Técnico</td>
+      <td>P.GESTION LABORAL</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>n.a.</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Admin</td>
+      <td>n.a.</td>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Estudiante</td>
+      <td>Predoc</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Estudiante</td>
+      <td>n.a.</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Postdoc</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Postdoc</td>
+      <td>PTA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>Contrato de la upo</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>EMPLEO JOVEN M2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>GARANTIA JUVENIL</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>No especificado</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>P.T. LABORAL FIJO</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>Técnico</td>
+      <td>PTA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>n.a.</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>n.a.</td>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>n.a.</td>
+      <td>P.T. LABORAL FIJO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Tecnico</td>
+      <td>n.a.</td>
+      <td>PTA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Predoc/Entry</td>
+      <td>Predoc</td>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>Predoc/Entry</td>
+      <td>Predoc</td>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Predoc/Entry</td>
+      <td>Predoc</td>
+      <td>ESTUDIANTE Phd</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Predoc/Entry</td>
+      <td>Predoc</td>
+      <td>MARIE CURIE</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Predoc/Entry</td>
+      <td>Predoc</td>
+      <td>No especificado</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Predoc/Entry</td>
+      <td>n.a.</td>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>CIBER</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>JdC</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>No especificado</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Postdoc</td>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>Predoc</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Posdoctoral</td>
+      <td>n.a.</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>Científico Titular</td>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>Científico Titular</td>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>Postdoc</td>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>RyC</td>
+      <td>BEATRIZ GALINDO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>RyC</td>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>RyC</td>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Medium/pre-tenure</td>
+      <td>RyC</td>
+      <td>RyC</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Senior/Tenured</td>
+      <td>Científico Titular</td>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Senior/Tenured</td>
+      <td>Científico Titular</td>
+      <td>PROFESOR TITULAR</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>Senior/Tenured</td>
+      <td>Investigador Científico</td>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Senior/Tenured</td>
+      <td>Profesor Investigación</td>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Senior/Tenured</td>
+      <td>Profesor Investigación</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Senior/Tenured</td>
+      <td>Profesor Investigación</td>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+    </section>
+    
+    <section>
+        <h2>Category #2 agregada en porcentaje (Ana.cat1)</h2>
+        <img src="/tmp/edi_plots/category_class_2_ana_aggregated_percentage.png" alt="Category #2 agregada en porcentaje">
+        <h3>Detalle de recuento y porcentaje</h3>
+        <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>SEXO</th>
+      <th>Category</th>
+      <th>F</th>
+      <th>M</th>
+      <th>Female %</th>
+      <th>Male %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>Visitors</td>
+      <td>6</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Management</td>
+      <td>10</td>
+      <td>5</td>
+      <td>6.4%</td>
+      <td>6.4%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Graduate</td>
+      <td>28</td>
+      <td>9</td>
+      <td>30.1%</td>
+      <td>30.1%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Technician</td>
+      <td>59</td>
+      <td>22</td>
+      <td>37.8%</td>
+      <td>37.8%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Entry level</td>
+      <td>19</td>
+      <td>28</td>
+      <td>16.0%</td>
+      <td>16.0%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Pre-tenure</td>
+      <td>16</td>
+      <td>7</td>
+      <td>16.0%</td>
+      <td>16.0%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Early stage</td>
+      <td>9</td>
+      <td>11</td>
+      <td>16.0%</td>
+      <td>16.0%</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Tenured</td>
+      <td>9</td>
+      <td>29</td>
+      <td>5.8%</td>
+      <td>5.8%</td>
+    </tr>
+  </tbody>
+</table>
+    </section>
+    
+    
+    <section>
+        <h2>Proporción de estados temporales</h2>
+        <img src="/tmp/edi_plots/temporal_proportion_por_sexo.png" alt="Proporción de estados temporales por sexo">
+        <h3>Detalle de estados temporales por sexo</h3>
+        <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Sexo</th>
+      <th>Temporal status</th>
+      <th>Personas</th>
+      <th>Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>106</td>
+      <td>67.9%</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>42</td>
+      <td>26.9%</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>3</td>
+      <td>1.9%</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>0.6%</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>2</td>
+      <td>1.3%</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>2</td>
+      <td>1.3%</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>70</td>
+      <td>61.9%</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>40</td>
+      <td>35.4%</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>2</td>
+      <td>1.8%</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>0.9%</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+  </tbody>
+</table>
+    </section>
+    
+    
+            <section>
+                <h2>Category #1</h2>
+                <img src="/tmp/edi_plots/category_1_por_sexo.png" alt="Distribución de Category #1 por sexo">
+                <h3>Recuento total por categoría</h3>
+                <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category #1</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>n.a.</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+                
+                <h3>Distribución temporal por sexo en Category #1</h3>
+                <img src="/tmp/edi_plots/category_1_por_sexo_temporal.png" alt="Distribución temporal por sexo en Category #1">
+                <h4>Detalle temporal por sexo</h4>
+                <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category #1</th>
+      <th>Sexo</th>
+      <th>Temporal status</th>
+      <th>Personas</th>
+      <th>Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>n.a.</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>33</td>
+      <td>76.7%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>7</td>
+      <td>16.3%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>1</td>
+      <td>2.3%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>2.3%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>1</td>
+      <td>2.3%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>13</td>
+      <td>65.0%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>6</td>
+      <td>30.0%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>5.0%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>n.a.</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>38</td>
+      <td>62.3%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>20</td>
+      <td>32.8%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>2</td>
+      <td>3.3%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>1</td>
+      <td>1.6%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>13</td>
+      <td>76.5%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>2</td>
+      <td>11.8%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>2</td>
+      <td>11.8%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Técnico</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>19</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>28</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Predoc</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>11</td>
+      <td>68.8%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>3</td>
+      <td>18.8%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>2</td>
+      <td>12.5%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>8</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Postdoc</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>4</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>7</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>9.1%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>10</td>
+      <td>90.9%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>4.8%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>20</td>
+      <td>95.2%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Científico Titular</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Investigador Científico</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>10</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Profesor Investigación</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+  </tbody>
+</table>
+            
+            </section>
+            
+            <section>
+                <h2>Category #2</h2>
+                <img src="/tmp/edi_plots/category_class_2_ana_por_sexo_csscolors.png" alt="Distribución de Category #2 por sexo">
+                <h3>Recuento total por categoría</h3>
+                <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category #2</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visitors</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>38</td>
+    </tr>
+  </tbody>
+</table>
+                
+                <h3>Distribución temporal por sexo en Category #2</h3>
+                <img src="/tmp/edi_plots/category_class_2_ana_por_sexo_temporal.png" alt="Distribución temporal por sexo en Category #2">
+                <h4>Detalle temporal por sexo</h4>
+                <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category #2</th>
+      <th>Sexo</th>
+      <th>Temporal status</th>
+      <th>Personas</th>
+      <th>Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visitors</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>4</td>
+      <td>66.7%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>2</td>
+      <td>33.3%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Visitors</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>2</td>
+      <td>20.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>8</td>
+      <td>80.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>20.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>4</td>
+      <td>80.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Management</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>26</td>
+      <td>92.9%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>3.6%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>3.6%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>8</td>
+      <td>88.9%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>11.1%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Graduate</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>39</td>
+      <td>66.1%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>18</td>
+      <td>30.5%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>2</td>
+      <td>3.4%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>16</td>
+      <td>72.7%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>4</td>
+      <td>18.2%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>2</td>
+      <td>9.1%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Technician</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>19</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>28</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Entry level</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>11</td>
+      <td>68.8%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>2</td>
+      <td>12.5%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>1</td>
+      <td>6.2%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>2</td>
+      <td>12.5%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>7</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Early stage</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>5</td>
+      <td>55.6%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>4</td>
+      <td>44.4%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>8</td>
+      <td>72.7%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>3</td>
+      <td>27.3%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Pre-tenure</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>9</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>29</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Tenured</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+  </tbody>
+</table>
+            
+            </section>
+            
+            <section>
+                <h2>Category class CSIC</h2>
+                <img src="/tmp/edi_plots/category_class_csic_por_sexo.png" alt="Distribución de Category class CSIC por sexo">
+                <h3>Recuento total por categoría</h3>
+                <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category class CSIC</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VISITANTE</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+                
+                <h3>Distribución temporal por sexo en Category class CSIC</h3>
+                <img src="/tmp/edi_plots/category_class_csic_por_sexo_temporal.png" alt="Distribución temporal por sexo en Category class CSIC">
+                <h4>Detalle temporal por sexo</h4>
+                <table class="dataframe data-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>Category class CSIC</th>
+      <th>Sexo</th>
+      <th>Temporal status</th>
+      <th>Personas</th>
+      <th>Porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VISITANTE</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>3</td>
+      <td>60.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>2</td>
+      <td>40.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>VISITANTE</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARGARITA SALAS</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>14.3%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>6</td>
+      <td>85.7%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>4</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION FUNCIONARIO</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.GESTION LABORAL</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>26</td>
+      <td>92.9%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>3.6%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>3.6%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>9</td>
+      <td>81.8%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>9.1%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>1</td>
+      <td>9.1%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>3</td>
+      <td>37.5%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>5</td>
+      <td>62.5%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>No especificado</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>GARANTIA JUVENIL</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>5</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>FUNCIONARIO TECNICO</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>EMPLEO JOVEN M2</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>8</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>P.T. LABORAL FIJO</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>39</td>
+      <td>90.7%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>2.3%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>3</td>
+      <td>7.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>17</td>
+      <td>85.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>5.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>2</td>
+      <td>10.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO TECNICO CProy</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PTA</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>Contrato de la upo</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE DE TESIS DOCTORAL</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>15</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>26</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATO PREDOCTORAL</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>MARIE CURIE</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>ESTUDIANTE Phd</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA 2021</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>3</td>
+      <td>75.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>25.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>4</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CONTRATADO DOCTOR CProy</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>POSTDOC JUNTA ANDALUCIA</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>JdC</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIBER</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROF. AYUDANTE DR.</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>BEATRIZ GALINDO</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>4</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>3</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CTTO DR./PROFESOR P.L.</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>3</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>4</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>RyC</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>3</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>8</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CIENTÍFICO TITULAR</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>3</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR INVESTIGACIÓN</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>4</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>9</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>PROFESOR TITULAR</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>6</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>CATEDRÁTICO DE UNIVER.</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>F</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>F</td>
+      <td>PERMANENTE</td>
+      <td>1</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>F</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>F</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>F</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>F</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>M</td>
+      <td>Temporal</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>M</td>
+      <td>PERMANENTE</td>
+      <td>2</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>M</td>
+      <td>LABORAL</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>M</td>
+      <td>ESTUDIANTE SIN CONTRATO</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>M</td>
+      <td>INDEFINIDA</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>INVESTIGADOR CIENTIFICO</td>
+      <td>M</td>
+      <td>VISITANTE</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+  </tbody>
+</table>
+            
+            </section>
+            
+</body>
+</html>

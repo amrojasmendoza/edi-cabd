@@ -81,17 +81,17 @@ a:hover { color: var(--rose); }
 }
 
 .brand__logo {
-  width: 88px;
-  height: 88px;
+  width: 108px;
+  height: 108px;
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .brand__kicker {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   color: var(--muted);
 }
 
@@ -99,6 +99,23 @@ a:hover { color: var(--rose); }
   margin: 2px 0 0;
   font-weight: 700;
   color: var(--ink-strong);
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.brand__initial {
+  font-size: 1.22em;
+  font-weight: 800;
+}
+
+.brand__rest {
+  color: var(--accent);
+}
+
+.brand__pipe {
+  font-weight: 400;
+  opacity: 0.65;
 }
 
 .nav {
@@ -602,7 +619,7 @@ main {
 @media (max-width: 540px) {
   main { padding: 28px 5vw 60px; }
   .hero, .panel { padding: 22px; }
-  .brand__logo { width: 68px; height: 68px; }
+  .brand__logo { width: 82px; height: 82px; }
   .topbar {
     padding: 14px 5vw;
   }

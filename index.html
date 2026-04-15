@@ -21,7 +21,7 @@
   <header class="topbar">
     <div class="brand">
       <img src="logos/EDI-logo-final.png" alt="CABD EDI" class="brand__logo">
-      <a href="https://www.cabd.es/en/" target="_blank" rel="noopener noreferrer">
+      <a class="brand__link" href="https://www.cabd.es/en/" target="_blank" rel="noopener noreferrer">
         <p class="brand__kicker" data-i18n="brand-kicker">Andalusian Centre for Developmental Biology</p>
         <p class="brand__title" data-i18n="brand-title"><span class="brand__initial">E</span><span class="brand__rest">quity</span> <span class="brand__pipe">|</span> <span class="brand__initial">D</span><span class="brand__rest">iversity</span> <span class="brand__pipe">|</span> <span class="brand__initial">I</span><span class="brand__rest">nclusion</span></p>
       </a>
@@ -31,7 +31,7 @@
       <a href="#goals" data-i18n="nav-goals">Goals</a>
       <a href="#actions" data-i18n="nav-actions">Actions</a>
       <a href="#resources" data-i18n="nav-resources">Resources</a>
-      <a href="#committee" data-i18n="nav-contact">Contact</a>
+      <a href="#report" data-i18n="nav-contact">Contact</a>
     </nav>
     <div class="lang-switch">
       <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">
@@ -61,7 +61,7 @@
         </div>
       </div>
       <div class="hero__media">
-        <p class="media-title" data-i18n="media-title">Women in numbers (data october 2025)</p>
+        <p class="media-title" data-i18n="media-title">Women in numbers (data October 2025)</p>
         <div class="media-card">
           <img src="assets/plots/category_class_2_ana_aggregated_percentage.png" alt="Category distribution graphic">
         </div>
@@ -92,7 +92,7 @@
 
     <section class="panel" id="cabd-8m">
       <div class="panel__header">
-        <p class="eyebrow">8 of March 2026, Women at CABD</p>
+        <p class="eyebrow">8 March 2026, Women at CABD</p>
       </div>
       <div class="media-card">
         <img src="media/cabd-8m.jpeg" alt="8M women at CABD">
@@ -302,11 +302,11 @@
       </div>
     </section>
 
-    <section class="panel panel--contrast" id="network">
+    <section class="panel" id="network">
       <div class="panel__header">
         <p class="eyebrow" data-i18n="network-eyebrow">Allies</p>
         <h2 data-i18n="network-title">We act together</h2>
-        <p data-i18n="network-text">Cabd is a joint centre of Universidad Pablo de Olavide, CSIC and Junta de Andalucia. We collaborate with their equality units and the SomMa network to scale our impact.</p>
+        <p data-i18n="network-text">CABD is a joint centre of Universidad Pablo de Olavide, CSIC and Junta de Andalucia. We collaborate with their equality units and the SomMa network to scale our impact.</p>
       </div>
       <div class="chips">
         <a class="chip-link" href="https://www.upo.es/oficinaparalaigualdad/" target="_blank" rel="noreferrer" data-i18n="chip-upo">UPO Office for Equality</a>
@@ -315,7 +315,7 @@
       </div>
     </section>
 
-    <section class="panel" id="report">
+    <section class="panel panel--contrast" id="report">
       <div class="report">
         <div>
           <p class="eyebrow" data-i18n="report-eyebrow">Need help?</p>
@@ -498,7 +498,7 @@
         "member7-name": "Marivi Cascajo",
         "network-eyebrow": "Alianzas",
         "network-title": "Actuamos en conjunto",
-        "network-text": "El CABD es un centro mixto de la Universidad Pablo de Olavide, el CSIC y la Junta de Andalucía. Colaboramos con sus unidades de igualdad y con la red SomMa para ampliar el impacto.",
+        "network-text": "El CABD es un centro mixto de la Universidad Pablo de Olavide, el CSIC y la Junta de Andalucía. Colaboramos con sus unidades de igualdad y con la red SomMa para ampliar nuestro impacto.",
         "chip-upo": "Oficina de Igualdad UPO",
         "chip-csic": "Comisión de Mujeres y Ciencia del CSIC",
         "chip-somma": "Grupo de EDI de SomMa",
@@ -587,6 +587,30 @@
       link.setAttribute('rel', 'noopener noreferrer');
     });
 
+    function scrollToSection(hash, updateHash = true) {
+      if (!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+      const header = document.querySelector('.topbar');
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const top = window.scrollY + target.getBoundingClientRect().top - headerHeight - 18;
+      window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+      if (updateHash) {
+        history.pushState(null, '', hash);
+      }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', event => {
+        const hash = link.getAttribute('href');
+        if (!hash || hash === '#') return;
+        const target = document.querySelector(hash);
+        if (!target) return;
+        event.preventDefault();
+        scrollToSection(hash);
+      });
+    });
+
     function goatcounterPath(sectionId) {
       if (sectionId) return `/section/${sectionId}`;
       const hash = window.location.hash.replace(/^#/, '').trim();
@@ -631,6 +655,9 @@
     }, 100);
 
     window.addEventListener('hashchange', trackCurrentSection);
+    window.addEventListener('hashchange', () => {
+      scrollToSection(window.location.hash, false);
+    });
 
     const trackedSections = Array.from(document.querySelectorAll('main section[id]'));
     if ('IntersectionObserver' in window) {

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script data-goatcounter="https://amrojasmendoza.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://amrojasmendoza.goatcounter.com/count" data-goatcounter-settings='{"no_onload": true}' async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
   <div class="bg-shape bg-shape--one"></div>
@@ -586,6 +586,70 @@
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
     });
+
+    function goatcounterPath(sectionId) {
+      if (sectionId) return `/section/${sectionId}`;
+      const hash = window.location.hash.replace(/^#/, '').trim();
+      return hash ? `/section/${hash}` : (window.location.pathname || '/');
+    }
+
+    function goatcounterTitle(sectionId) {
+      const hash = sectionId || window.location.hash.replace(/^#/, '').trim();
+      if (!hash) return document.title;
+      const section = document.getElementById(hash);
+      const heading = section && section.querySelector('h1, h2, h3');
+      return heading ? `${document.title} - ${heading.textContent.trim()}` : document.title;
+    }
+
+    function sendGoatCounterPageview(sectionId) {
+      if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return false;
+      window.goatcounter.count({
+        path: goatcounterPath(sectionId),
+        title: goatcounterTitle(sectionId)
+      });
+      return true;
+    }
+
+    let lastTrackedPath = null;
+    function trackSection(sectionId) {
+      const path = goatcounterPath(sectionId);
+      if (path === lastTrackedPath) return;
+      if (sendGoatCounterPageview(sectionId)) {
+        lastTrackedPath = path;
+      }
+    }
+
+    function trackCurrentSection() {
+      const hash = window.location.hash.replace(/^#/, '').trim();
+      trackSection(hash || null);
+    }
+
+    const goatcounterReady = setInterval(() => {
+      if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return;
+      clearInterval(goatcounterReady);
+      trackCurrentSection();
+    }, 100);
+
+    window.addEventListener('hashchange', trackCurrentSection);
+
+    const trackedSections = Array.from(document.querySelectorAll('main section[id]'));
+    if ('IntersectionObserver' in window) {
+      const sectionObserver = new IntersectionObserver(entries => {
+        const visibleEntries = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (!visibleEntries.length) return;
+        const activeSection = visibleEntries[0].target;
+        if (activeSection && activeSection.id) {
+          trackSection(activeSection.id);
+        }
+      }, {
+        threshold: [0.35, 0.6, 0.8],
+        rootMargin: '-15% 0px -35% 0px'
+      });
+
+      trackedSections.forEach(section => sectionObserver.observe(section));
+    }
 
     const savedLang = localStorage.getItem('lang') || 'en';
     if (savedLang !== 'en') setLang(savedLang);

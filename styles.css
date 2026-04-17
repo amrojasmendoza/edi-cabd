@@ -423,7 +423,7 @@ section[id] {
 .event-years {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .event-year {
@@ -444,6 +444,8 @@ section[id] {
 }
 
 .event-item {
+  display: grid;
+  gap: 8px 18px;
   padding: 16px 18px;
   border-top: 1px solid rgba(28,16,20,0.08);
   border-radius: 16px;
@@ -498,6 +500,14 @@ section[id] {
 .event-item p {
   margin-bottom: 8px;
 }
+
+@media (min-width: 900px) {
+  .event-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
 
 .update-card {
   background: #fff;
